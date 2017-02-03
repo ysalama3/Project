@@ -1,0 +1,15 @@
+Preferences:
+1) ape- Hominoidea-113
+2) monkey-Catarrhini- 155
+3) horse-equidae-744
+
+command:
+less FILE.csv | cut -d "," -f6 | sort | uniq | wc -l
+
+Plan:
+
+Plot diversity of your group though time.
+Plot the stratigraphic record of genera or families in your data set 
+Plot the occurrences of fossil species
+Use your occurrence data to calculate speciation and extinction rats through time.
+
