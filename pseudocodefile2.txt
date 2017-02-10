@@ -1,0 +1,25 @@
+1. Preparing input file for PyRate
+-The PyRate program requires a specific format for the input data. A correctly formatted 
+input file can be generated using an R function provided in the script ‘pyrate_utilities.
+r’ starting from a table with the fossil occurrence data. 
+-All fossil occurrences need to be provided in a table (a tab-delimited text file), with 
+species names, their status ("extant" or "extinct"), and minimum and maximum ages 
+as the columns. The minimum and maximum ages commonly correspond to the 
+temporal boundaries of the stage a particular fossil is assigned to and are generally 
+available from the databases. At present, PyRate can not deal with missing 
+information in these four columns, so make sure that you remove these entries
+beforehand. One additional column may be added providing a trait value, if available,
+ which can be used in the birth-death analysis (note that here, missing data are allowed,
+ and should be given as NA). 
+
+pseudocode: 
+
+formated_file = extract species names + their status ("extant" or "extinct") +  minimum and maximum ages
+my_traits = sort uniq species + extract corresponding traits
+
+for every species in apefile.csv 
+         append a corresponding trait value
+        if data doesnt exist 
+         print "NA"
+        else:
+         print "species name + uniq trait"
