@@ -15,11 +15,14 @@ beforehand. One additional column may be added providing a trait value, if avail
 pseudocode: 
 
 formated_file = extract species names + their status ("extant" or "extinct") +  minimum and maximum ages
+for all lines with missing values
+       remove them from my data file
+
 my_traits = sort uniq species + extract corresponding traits
 
 for every species in apefile.csv 
          append a corresponding trait value
-        if data doesnt exist 
+        if trait data doesnt exist 
          print "NA"
         else:
          print "species name + uniq trait"
