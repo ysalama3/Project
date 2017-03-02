@@ -1,0 +1,76 @@
+---
+title: "ape_occurence_in_R"
+output: md_document
+---
+```{r}
+library(ggplot2)
+homins <- read.csv("~/Desktop/eeb-177/eeb-174-final-project/apeoutput.csv", header = F, as.is = T)
+names(homins) <- c("genus", "species", "minage", "maxage")
+head(homins)
+```
+
+```{r}
+ape_occ <- ggplot(homins, aes( species, ymin = maxage, ymax=minage, colour = genus))
+ape_occ <- ape_occ + geom_linerange()
+ape_occ
+```
+
+```{r}
+ape_occ <- ape_occ + theme(legend.position="none")
+ape_occ
+
+```
+```{r}
+ape_occ <- ape_occ + coord_flip()
+ape_occ
+
+```
+```{r}
+ape_occ <- ape_occ + theme(legend.position="none")
+ape_occ
+
+```
+
+
+
+```{r}
+ape_occ <- ape_occ +  theme(axis.text.y = element_text(size=3))
+ape_occ
+
+```
+
+```{r}
+ape_occ <- ape_occ + theme(axis.ticks.y=element_blank())
+ape_occ
+
+```
+
+
+```{r}
+ape_occ <- ape_occ + scale_y_continuous(limits=c(0, 30), expand = c(0, 0), breaks=c(0, 10, 20, 30, 40))
+ape_occ
+
+```
+
+```{r}
+ape_occ <- ape_occ + labs(title = "Hominoidea Fossil Occurrences", x = "Species", y = "Ma ago") + theme(plot.title = element_text(hjust = 0.5, size=22, face = "bold"), axis.title =element_text(size=20))
+ape_occ
+
+```
+
+
+```{r}
+ggsave(filename = "homin-occ.pdf", plot = ape_occ)
+
+```
+
+```{r}
+install.packages("paleotree")
+library(paleotree)
+
+```
+
+```{r}
+
+
+```
