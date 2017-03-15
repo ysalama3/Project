@@ -1,0 +1,73 @@
+---
+title: "haplo_ggplot"
+output: md_document
+---
+```{r}
+library(ggplot2)
+haplogg<-read.csv("~/Desktop/eeb-177/eeb-174-final-project/haploformatted17.csv", as.is=T)
+
+head(haplogg)
+```
+
+```{r}
+g<-ggplot(haplogg, aes(accepted_rank, max_ma))+geom_point(color="firebrick")
+g<-g+ggtitle('Rank and Max_ma')
+g
+
+```
+```{r}
+plot1 <- ggplot(haplogg, aes(x=accepted_rank)) + geom_bar() + labs(title="Occurrence Count")  # Y axis derived from counts of X item
+print(plot1)
+
+```
+
+```{r}
+haplodiv<-read.csv("~/Desktop/eeb-177/eeb-174-final-project/haplodiversity21.csv", as.is=T)
+
+head(haplodiv)
+```
+```{r}
+g<-ggplot(haplodiv, aes(interval_name, n_occs))+geom_point(color="firebrick")
+g<-g+ggtitle('Interval and Number of Occurrences')
+g + theme(axis.text.x=element_text(angle=50, size=7, vjust=0.5))
+g
+```
+```{r}
+haplomeas<-read.csv("~/Desktop/eeb-177/eeb-174-final-project/haplomeasurements17.csv", as.is=T)
+
+head(haplomeas)
+
+```
+```{r}
+g<-ggplot(haplomeas, aes(measurement, average))+geom_point(color="firebrick")
+g<-g+ggtitle('Measurement and Average')
+g + theme(axis.text.x=element_text(angle=50, size=7, vjust=0.5))
+g
+
+```
+
+```{r}
+
+plot2 <- ggplot(haplomeas, aes(x=measurement)) + geom_bar() + labs(title="Measurement Count")  # Y axis derived from counts of X item
+print(plot2)
+
+
+```
+
+```{r}
+
+library(ggplot2)
+haplo_rich<-read.csv("~/Desktop/eeb-177/eeb-174-final-project/haplominmax3.csv", as.is=T)
+
+head(haplo_rich)
+```
+
+
+```{r}
+plot10 <-ggplot(haplo_rich, aes(max_ma)) + geom_freqpoly(binwidth=3)
+print(plot10)
+
+```
+
+```
+
