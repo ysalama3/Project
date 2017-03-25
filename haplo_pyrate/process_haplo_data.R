@@ -1,0 +1,3 @@
+source("~/PyRate/pyrate_utilities.r")
+extant_haplorhini = c("Chlorocebus aethiops","Colobus guereza","Homo sapiens","Papio hamadryas","Theropithecus oswaldi","Papio anubis","Protopithecus brasiliensis","Alouatta mauroi","Papio cynocephalus","Alouatta palliata","Alouatta seniculus","Aotus trivirgatus","Ateles geoffroyi","Ateles paniscus","Callimico goeldii","Callithrix pygmaea","Cebus apella","Cebus capucinus","Cebus nigrivittatus","Cercopithecus mitis","Cercopithecus pygerythrus","Chlorocebus patas","Insulacebus toussaintiana","Lagothrix lagotricha","Leontopithecus midas","Saguinus fuscicollis","Saimiri sciureus")
+extract.ages.pbdb(file= "haplopyr_occ.csv",extant_species=extant_haplorhini)                      
